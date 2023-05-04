@@ -4,7 +4,7 @@
   "description": "Abigail Martinez's final project for INF653 Back End Web Development I",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server",
     "dev": "nodemon server"
   },
   "author": "Abigail Martinez",
