@@ -1,14 +1,29 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-//schema for mongodb
-const StatesSchema = new Schema({
-     statecode: {
-        type: String, 
-        required: true,
-        unique: true
-    },
-    funfacts: [String] 
-    
-});
+const express = require('express');
+const router = express.Router();
+const statesController = require('../../controllers/statesController');
 
-module.exports = mongoose.model('State', StatesSchema);
+router.route('/')
+    .get(statesController.getAllStates)
+
+router.route('/:state')
+    .get(statesController.getState);
+
+router.route('/:state/funfact')
+    .get(statesController.getFunfact)
+    .patch(statesController.updateFunfact)
+    .post(statesController.createNewFunfact)
+    .delete(statesController.deleteFunFact);
+
+router.route('/:state/capital')
+    .get(statesController.getCapital);
+
+router.route('/:state/nickname')
+    .get(statesController.getNickname);
+
+router.route('/:state/population')
+    .get(statesController.getPopulation);
+
+router.route('/:state/admission')
+    .get(statesController.getAdmission);
+    
+module.exports = router;

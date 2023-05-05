@@ -16,8 +16,9 @@ connectDB();
 // custom middleware logger
 app.use(logger);
 
+const use = app.use;
 // Cross Origin Resource Sharing
-app.use(cors(corsOptions));
+use(cors(corsOptions));
 
 // built-in middleware to handle urlencoded form data
 app.use(express.urlencoded({ extended: false }));
