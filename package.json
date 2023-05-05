@@ -4,7 +4,7 @@
   "description": "Abigail Martinez's final project for INF653 Back End Web Development I",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
+    "start": "node server.js",
     "dev": "nodemon server"
   },
   "author": "Abigail Martinez",
@@ -12,6 +12,7 @@
   "dependencies": {
     "date-fns": "^2.30.0",
     "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

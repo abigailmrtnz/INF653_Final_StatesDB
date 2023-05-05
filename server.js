@@ -1,11 +1,11 @@
-const logEvents = require('./logEvents');
+const express = require('express');
+const app = express();
+const path = require('path');
+const PORT = process.env.PORT || 3500;
 
-const EventEmitter = require('events');
+app.get('/', (req, res) => {
+    //res.sendFile('./views/index.html', {root: __dirname});
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
 
-class MyEmitter extends EventEmitter {};
-
-const myEmitter = new MyEmitter();
-
-myEmitter.on('log', (msg) => logEvents(msg));
-
-myEmitter.emit('log', 'Log event emitted!');
+app.listen(PORT, () => console.log('Server running on port ${PORT}'));
